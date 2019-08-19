@@ -13,11 +13,17 @@ checkIso() {
     fi
 }
 
-installDependencies() {
-    wimextract --version > /dev/null 2>&1
-    if [ "$1" -ne "0" ]; then
-        yay -S --needed --noconfirm wimlib
+installIfRequired() {
+    which $1 > /dev/null 2>&1
+    if [ "$?" -ne "0" ]; then
+        sudo pacman -S --needed --noconfirm $2
     fi
+}
+
+installDependencies() {
+    installIfRequired curl curl
+    installIfRequired wimextract wimlib
+    installIfRequired 7z p7zip
 }
 
 extractIso() {
