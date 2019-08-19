@@ -26,9 +26,9 @@ extractIso() {
 }
 
 preparePackage() {
-	mkdir -p fonts
-    curl https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=ttf-ms-win10 > fonts/PKGBUILD
-	bash -c 'wimextract iso/sources/install.wim 1 /Windows/{Fonts/"*".{ttf,ttc},System32/Licenses/neutral/"*"/"*"/license.rtf} --dest-dir fonts'
+    mkdir -p fonts
+    curl "https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=ttf-ms-win10" > fonts/PKGBUILD
+    bash -c 'wimextract iso/sources/install.wim 1 /Windows/{Fonts/"*".{ttf,ttc},System32/Licenses/neutral/"*"/"*"/license.rtf} --dest-dir fonts'
 }
 
 buildPackages() {
