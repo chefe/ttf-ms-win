@@ -1,7 +1,7 @@
 # ttf-ms-win10
 A script to install the [windows default fonts][1] on [archlinux][2]
 
-## Precondictions
+## Preconditions
 A Windows 10 ISO has to be downloaded manually before the script. See [link][3].
 
 ## Usage
