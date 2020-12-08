@@ -55,7 +55,7 @@ cleanup() {
 }
 
 install() {
-    yay -U --noconfirm ttf-ms-win10-*.pkg.tar.xz
+    yay -U --noconfirm ttf-ms-win10-*.pkg.tar.zst
 }
 
 main() {
