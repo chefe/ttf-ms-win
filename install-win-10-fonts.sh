@@ -3,9 +3,9 @@
 checkIso() {
     foundIso=$(ls Win10*.iso 2> /dev/null | wc -l)
     if [ "$foundIso" -ne "1" ]; then
-        link="https://www.microsoft.com/de-de/software-download/windows10ISO"
+        link="https://www.microsoft.com/en-us/software-download/windows10ISO"
 
-        echo "Windows iso can not be found, please download from the following link:"
+        echo "Windows 10 ISO not found, please download one from the following link:"
         echo "$link"
 
         xdg-open "$link"
@@ -50,7 +50,7 @@ buildPackages() {
 }
 
 cleanup() {
-    mv fonts/ttf-ms-win10-[0-9]* .
+    mv fonts/ttf-ms-win10-*.pkg.tar.zst .
     rm -r fonts iso
 }
 
